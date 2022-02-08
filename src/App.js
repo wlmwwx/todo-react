@@ -1,24 +1,37 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
 
+const Hello = (props) => {
+  return (
+    <div>
+      <p>
+        Hello {props.name}, you are {props.age} years old
+      </p>
+    </div>
+  )
+}
+
+const Footer = () => {
+  return (
+    <div>
+      <a href="https://github.com/mluukkai">mluukkai</a>
+      greeting app created by <a href="https://github.com/mluukkai">mluukkai</a>
+    </div>
+  )
+}
+
 function App() {
+  const now=new Date();
+  const a=30
+  const b=20
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <p>Hello World, it is {now.toDateString()}</p>
+      <p>{a+b}</p>
+      <Hello name="Maya" age={26+10}/>
+      <Hello/>
+      <Footer/>
+    </div> 
   );
 }
 
